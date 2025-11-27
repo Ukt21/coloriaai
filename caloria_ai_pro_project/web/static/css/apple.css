@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+body.page {
+    background: radial-gradient(circle at top, #020617, #020617 40%, #020617);
+    color: #f9fafb;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 24px;
+}
+.logo span {
+    color: #38bdf8;
+}
+
+.user {
+    color: #9ca3af;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    color: #d1d5db;
+    margin-bottom: 24px;
+    max-width: 420px;
+    line-height: 1.5;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-note {
+    color: #9ca3af;
+    font-size: 14px;
+    text-align: center;
+    max-width: 260px;
+}
+
+/* Rings */
+.ring {
+    --size: 220px;
+    --stroke: 18px;
+    --progress: 0.7;
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            rgba(148, 163, 184, 0.15) calc(var(--progress) * 360deg),
+            rgba(15, 23, 42, 0.4) calc(var(--progress) * 360deg)
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ring::before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--stroke) * 0.9);
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 50%;
+}
+
+.ring-inner {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.ring-inner span {
+    display: block;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.ring-inner strong {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 0 40px 40px;
+}
+
+.dashboard h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.rings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 900px;
+}
+
+.ring-card {
+    display: flex;
+    justify-content: center;
+}
+
+.ring-calories {
+    background:
+        conic-gradient(
+            #f97316 calc(var(--progress) * 360deg),
+            rgba(15, 23, 42, 0.4) calc(var(--progress) * 360deg)
+        );
+}
+
+.ring-protein {
+    background:
+        conic-gradient(
+            #22c55e calc(var(--progress) * 360deg),
+            rgba(15, 23, 42, 0.4) calc(var(--progress) * 360deg)
+        );
+}
+
+.ring-activity {
+    background:
+        conic-gradient(
+            #38bdf8 calc(var(--progress) * 360deg),
+            rgba(15, 23, 42, 0.4) calc(var(--progress) * 360deg)
+        );
+}
+
+.hint {
+    margin-top: 24px;
+    color: #9ca3af;
+}

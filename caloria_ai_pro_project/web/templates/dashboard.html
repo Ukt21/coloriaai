@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой день — Caloria AI Pro</title>
+    <link rel="stylesheet" href="/static/css/apple.css">
+</head>
+<body class="page">
+<header class="header">
+    <div class="logo">Caloria <span>AI Pro</span></div>
+    <div class="user">Telegram ID: {{ telegram_id }}</div>
+</header>
+
+<main class="dashboard">
+    <h1>Кольца прогресса за сегодня</h1>
+    <div class="rings-grid">
+        <div class="ring-card">
+            <div class="ring ring-calories" style="--progress: {{ rings.calories }}">
+                <div class="ring-inner">
+                    <span>Калории</span>
+                    <strong>{{ (rings.calories * 100) | int }}%</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="ring-card">
+            <div class="ring ring-protein" style="--progress: {{ rings.protein }}">
+                <div class="ring-inner">
+                    <span>Белки</span>
+                    <strong>{{ (rings.protein * 100) | int }}%</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="ring-card">
+            <div class="ring ring-activity" style="--progress: {{ rings.activity }}">
+                <div class="ring-inner">
+                    <span>Активность</span>
+                    <strong>{{ (rings.activity * 100) | int }}%</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="hint">
+        Эти кольца основаны на твоих приёмах пищи, отправленных через Telegram-бота.
+        Дальше сюда можно добавить графики, историю и рекомендации.
+    </p>
+</main>
+</body>
+</html>
